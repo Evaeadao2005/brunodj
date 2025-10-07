@@ -16,9 +16,9 @@
             --background-card: #141414;
             --primary-text: #F5F5F5;
             --secondary-text: #A9A9A9;
-            --accent-gold: #D4AF37; /* Um toque de dourado para sofisticação */
+            --accent-blue: #007BFF; /* NOVA COR PRINCIPAL: AZUL */
             --border-color: #282828;
-            --shadow-color: rgba(212, 175, 55, 0.1);
+            --shadow-color: rgba(0, 123, 255, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,9 +34,7 @@
             animation: fadeIn 1s ease-in forwards;
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { to { opacity: 1; } }
 
         .container {
             max-width: 1140px;
@@ -44,7 +42,7 @@
             padding: 0 20px;
         }
         
-        /* --- HEADER ROBUSTO --- */
+        /* --- HEADER --- */
         .main-header {
             padding: 15px 0;
             position: sticky;
@@ -62,14 +60,12 @@
             align-items: center;
         }
 
-        .logo-container {
-            flex-shrink: 0; /* Impede que a logo encolha */
-        }
+        .logo-container { flex-shrink: 0; }
         
         .logo {
-            max-width: 180px; /* Largura máxima */
-            height: 50px;     /* Altura fixa para alinhar */
-            object-fit: contain; /* Garante que a logo caiba sem distorcer */
+            max-width: 180px;
+            height: 50px;
+            object-fit: contain;
             display: block;
         }
         
@@ -82,19 +78,19 @@
             transition: color 0.3s ease;
         }
 
-        .main-nav a:hover { color: var(--accent-gold); }
+        .main-nav a:hover { color: var(--accent-blue); }
 
         .cta-button-small {
-            background: var(--accent-gold);
-            color: var(--background-dark);
+            background: var(--accent-blue);
+            color: var(--primary-text);
             padding: 8px 25px;
             border-radius: 50px;
             font-weight: 700;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
-        .cta-button-small:hover { background-color: #fff; }
+        .cta-button-small:hover { background-color: #fff; color: var(--background-dark); }
 
-        /* --- HERO SECTION COM FUNDO --- */
+        /* --- HERO SECTION --- */
         .hero {
             position: relative;
             padding: 120px 0;
@@ -122,8 +118,8 @@
         
         .cta-button-large {
             display: inline-block;
-            background: var(--accent-gold);
-            color: var(--background-dark);
+            background: var(--accent-blue);
+            color: var(--primary-text);
             padding: 15px 40px;
             font-family: 'Teko', sans-serif;
             font-size: 1.8rem;
@@ -131,12 +127,13 @@
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
         }
         .cta-button-large:hover { 
             background-color: #fff;
+            color: var(--background-dark);
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
         }
 
         /* --- SEÇÕES GENÉRICAS --- */
@@ -161,7 +158,23 @@
             margin-right: auto;
         }
 
-        /* --- SERVIÇOS COM ÍCONES --- */
+        /* --- SEÇÃO DE VÍDEO (CORRIGIDA) --- */
+        .video-showcase {
+            max-width: 550px; /* Largura máxima do vídeo */
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden; /* Garante que o conteúdo do Instagram respeite as bordas arredondadas */
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-showcase:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 40px var(--shadow-color);
+        }
+
+        /* --- SERVIÇOS --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,36 +187,39 @@
             padding: 35px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-gold);
+            border-color: var(--accent-blue);
         }
         
-        .service-card .icon {
-            width: 50px;
-            height: 50px;
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
             margin-bottom: 20px;
-            color: var(--accent-gold);
+            background-color: var(--background-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .icon-wrapper svg {
+            width: 30px;
+            height: 30px;
+            color: var(--accent-blue);
         }
         
         .service-card h3 {
             font-family: 'Teko', sans-serif;
             font-size: 2rem;
             margin-bottom: 10px;
-            color: var(--primary-text);
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: var(--secondary-text);
         }
         
-        /* --- SEÇÃO DE DEPOIMENTOS --- */
+        /* --- DEPOIMENTOS --- */
         .testimonial-card {
             background-color: var(--background-card);
             padding: 30px;
@@ -212,17 +228,10 @@
             max-width: 700px;
             margin: 0 auto;
         }
-        .testimonial-card p.quote {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        .testimonial-card p.author {
-            font-weight: 700;
-            color: var(--accent-gold);
-        }
+        .testimonial-card p.quote { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; }
+        .testimonial-card p.author { font-weight: 700; color: var(--accent-blue); }
         
-        /* --- RODAPÉ ELABORADO --- */
+        /* --- FOOTER --- */
         .main-footer {
             padding: 60px 0;
             background-color: var(--background-card);
@@ -235,32 +244,26 @@
             gap: 25px;
         }
 
-        .social-links a {
-            margin: 0 15px;
-        }
+        .social-links a { margin: 0 15px; }
 
         .social-links svg {
-            width: 24px;
-            height: 24px;
-            color: var(--secondary-text);
-            transition: color 0.3s ease, transform 0.3s ease;
+            width: 28px;
+            height: 28px;
+            fill: var(--secondary-text);
+            transition: fill 0.3s ease, transform 0.3s ease;
         }
 
         .social-links a:hover svg {
-            color: var(--accent-gold);
+            fill: var(--accent-blue);
             transform: scale(1.2);
         }
 
-        .footer-text {
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-        }
+        .footer-text { color: var(--secondary-text); font-size: 0.9rem; }
         
         /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
             .header-content { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 3.5rem; }
-            .hero p { font-size: 1.1rem; }
             .section-title { font-size: 2.8rem; }
         }
     </style>
@@ -271,7 +274,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo-container">
-                    <img src="https://via.placeholder.com/180x50/0A0A0A/D4AF37?text=BRUNO+DJ" alt="Logo Bruno DJ" class="logo">
+                    <img src="/logo.jpg" alt="Logo Bruno DJ" class="logo">
                 </a>
                 <nav class="main-nav">
                     <a href="#servicos">Serviços</a>
@@ -291,14 +294,16 @@
             </div>
         </section>
         
-        <section id="video">
+        <section id="gallery">
             <div class="container">
                 <h2 class="section-title">A ENERGIA EM AÇÃO</h2>
                 <p class="section-subtitle">Aperte o play e sinta a atmosfera que levo para a sua festa. A prova de que a música certa faz toda a diferença.</p>
-                 <div class="video-wrapper" style="max-width: 550px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                
+                <div class="video-showcase">
                     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><div style="padding:16px;"></div></blockquote>
                     <script async src="//www.instagram.com/embed.js"></script>
                 </div>
+
             </div>
         </section>
 
@@ -308,17 +313,23 @@
                 <p class="section-subtitle">Soluções completas e personalizadas para garantir que seu evento seja exatamente como você sonhou.</p>
                 <div class="services-grid">
                     <div class="service-card">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        </div>
                         <h3>Casamentos</h3>
                         <p>Da cerimônia à recepção, crio a trilha sonora emocionante e vibrante que o seu grande dia merece.</p>
                     </div>
                     <div class="service-card">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                        <div class="icon-wrapper">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.07a2.25 2.25 0 01-2.25 2.25H5.625a2.25 2.25 0 01-2.25-2.25v-4.07m16.5 0a2.25 2.25 0 00-2.25-2.25H5.625a2.25 2.25 0 00-2.25 2.25m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 19.16 18.84 20.5 17 20.5H7c-1.84 0-3.25-1.34-3.25-3.25V6.75A2.25 2.25 0 016 4.5h12A2.25 2.25 0 0120.25 6.75v3.75" /></svg>
+                        </div>
                         <h3>Eventos Corporativos</h3>
                         <p>Profissionalismo e a sonoridade ideal para lançamentos, confraternizações e workshops que impressionam.</p>
                     </div>
                     <div class="service-card">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l9.75 9.75M17.25 8.25L7.5 18M12 18.75l.383.026a1.503 1.503 0 001.737-1.022L16.5 7.5l-3.75-3.75L4.5 14.25l.026.383a1.503 1.503 0 001.022 1.737L12 18.75z" /></svg>
+                        <div class="icon-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                        </div>
                         <h3>Festas Privadas</h3>
                         <p>Seja qual for o motivo da celebração, levo os melhores hits e uma energia contagiante para sua festa.</p>
                     </div>
@@ -352,15 +363,15 @@
             <div class="footer-content">
                 <div class="social-links">
                     <a href="https://instagram.com/brunoa.dj" target="_blank" title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.552 0-3.886.012-5.242.076-2.813.128-4.015 1.323-4.143 4.143-.064 1.356-.076 1.69-.076 5.242s.012 3.886.076 5.242c.128 2.813 1.33 4.015 4.143 4.143 1.356.064 1.69.076 5.242.076 3.552 0 3.886-.012 5.242-.076 2.813-.128 4.015-1.323 4.143-4.143.064-1.356.076-1.69.076-5.242s-.012-3.886-.076-5.242c-.128-2.813-1.33-4.015-4.143-4.143-1.356-.064-1.69-.076-5.242-.076zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm0 1.802a1.948 1.948 0 110 3.896 1.948 1.948 0 010-3.896zM18.802 6.198a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"></path></svg>
+                        <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg>
                     </a>
                     <a href="https://wa.me/558897273151" target="_blank" title="WhatsApp">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.75 13.96c.25.13.41.2.46.3.08.13.04.61-.09 1.18s-.61 1.08-1.02 1.25c-.41.17-1.31.25-2.07-.04-.94-.36-2.2-1.18-2.9-1.93s-1.25-1.91-1.38-2.33c-.13-.41.04-.66.29-.91.2-.2.41-.29.57-.46.17-.17.25-.29.41-.5.17-.2.08-.41-.04-.57s-.57-1.38-.78-1.93c-.2-.54-.45-.45-.61-.45-.17 0-.38 0-.54.04-.17.04-.38.08-.57.29s-.66.61-.82.98-.17.78-.17 1.25.29 1.54.41 1.7.57.29 1.25.98 1.54 1.38 2.45 1.93c1.18.74 1.95.86 2.53.82.57-.04 1.54-.62 1.74-1.25.2-.62.2-1.12.13-1.25s-.17-.13-.38-.25zm4.34-9.62a8.88 8.88 0 00-12.56 0 8.88 8.88 0 000 12.56l-1.42 5.12 5.25-1.38a8.88 8.88 0 0012.56 0 8.88 8.88 0 000-12.56zM12 21.75c-1.74 0-3.43-.53-4.88-1.54l-5.12 1.38L3.38 16.5c-1-1.45-1.54-3.14-1.54-4.88a9.88 9.88 0 0110.16-9.88 9.88 9.88 0 019.88 9.88c0 5.46-4.42 9.88-9.88 9.88z"></path></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12.04,2C6.58,2 2.13,6.45 2.13,11.91C2.13,13.66 2.59,15.36 3.45,16.86L2.05,22L7.3,20.62C8.75,21.41 10.37,21.82 12.04,21.82C17.5,21.82 21.95,17.37 21.95,11.91C21.95,6.45 17.5,2 12.04,2M12.04,3.67C16.56,3.67 20.28,7.38 20.28,11.91C20.28,16.44 16.56,20.15 12.04,20.15C10.48,20.15 8.99,19.74 7.7,19L7.29,18.78L4.83,19.5L5.6,17.11L5.35,16.69C4.53,15.36 4.06,13.69 4.06,11.91C4.06,7.38 7.78,3.67 12.04,3.67M16.57,14.49C16.37,14.38 15.22,13.82 15,13.74C14.78,13.66 14.63,13.62 14.49,13.82C14.34,14 13.93,14.5 13.79,14.65C13.64,14.8 13.5,14.82 13.29,14.74C13.08,14.66 12.21,14.38 11.2,13.52C10.41,12.83 9.87,12.04 9.72,11.8C9.57,11.55 9.68,11.44 9.8,11.32C9.91,11.2 10.06,11 10.21,10.85C10.36,10.7 10.42,10.58 10.53,10.37C10.63,10.17 10.58,10 10.5,9.85C10.43,9.7 9.94,8.5 9.74,8C9.55,7.5 9.35,7.58 9.21,7.58C9.07,7.58 8.92,7.58 8.78,7.58C8.63,7.58 8.39,7.66 8.19,7.86C7.98,8.06 7.42,8.57 7.42,9.72C7.42,10.87 8.21,11.93 8.35,12.08C8.5,12.23 9.92,14.5 12.18,15.46C14.44,16.42 14.44,15.93 14.91,15.89C15.38,15.84 16.24,15.28 16.44,14.97C16.63,14.67 16.63,14.57 16.57,14.49Z"></path></svg>
                     </a>
-                    </div>
+                </div>
                 <div class="footer-text">
                     <p>&copy; 2025 Bruno DJ - Todos os direitos reservados.</p>
-                    <p>Atendendo em todo o Ceará.</p>
+                    <p>Atendendo em Juazeiro do Norte e todo o Ceará.</p>
                 </div>
             </div>
         </div>
