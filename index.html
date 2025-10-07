@@ -16,7 +16,7 @@
             --background-card: #141414;
             --primary-text: #F5F5F5;
             --secondary-text: #A9A9A9;
-            --accent-blue: #007BFF; /* NOVA COR PRINCIPAL: AZUL */
+            --accent-blue: #007BFF;
             --border-color: #282828;
             --shadow-color: rgba(0, 123, 255, 0.1);
         }
@@ -42,7 +42,7 @@
             padding: 0 20px;
         }
         
-        /* --- HEADER --- */
+        /* --- HEADER COM CORREÇÃO PARA CELULAR --- */
         .main-header {
             padding: 15px 0;
             position: sticky;
@@ -87,8 +87,13 @@
             border-radius: 50px;
             font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
+            white-space: nowrap; /* Impede que o texto quebre */
         }
         .cta-button-small:hover { background-color: #fff; color: var(--background-dark); }
+        
+        .nav-link-desktop {
+            /* Estes links serão ocultados em telas menores */
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -158,20 +163,42 @@
             margin-right: auto;
         }
 
-        /* --- SEÇÃO DE VÍDEO (CORRIGIDA) --- */
-        .video-showcase {
-            max-width: 326px; /* Largura máxima do vídeo */
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden; /* Garante que o conteúdo do Instagram respeite as bordas arredondadas */
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        /* --- LAYOUT 2 COLUNAS PARA GALERIA (CORRIGIDO) --- */
+        #gallery { background-color: var(--background-card); }
+
+        .gallery-layout {
+            display: flex;
+            align-items: center;
+            gap: 50px; /* Espaço entre as colunas */
+            text-align: left;
         }
 
-        .video-showcase:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 40px var(--shadow-color);
+        .gallery-layout .video-column,
+        .gallery-layout .text-column {
+            flex: 1; /* Faz com que cada coluna ocupe metade do espaço */
+        }
+        
+        .text-column h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: var(--primary-text);
+        }
+
+        .text-column p {
+            color: var(--secondary-text);
+            margin-bottom: 30px;
+        }
+
+        .video-showcase {
+            width: 100%; /* Ocupa todo o espaço da coluna */
+            max-width: 500px; /* Limita para não ficar gigante */
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
         /* --- SERVIÇOS --- */
@@ -190,79 +217,62 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
         
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-blue);
-        }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--accent-blue); }
         
         .icon-wrapper {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 20px;
-            background-color: var(--background-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 60px; height: 60px; margin-bottom: 20px;
+            background-color: var(--background-dark); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
             border: 1px solid var(--border-color);
         }
 
-        .icon-wrapper svg {
-            width: 30px;
-            height: 30px;
-            color: var(--accent-blue);
-        }
+        .icon-wrapper svg { width: 30px; height: 30px; color: var(--accent-blue); }
         
-        .service-card h3 {
-            font-family: 'Teko', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+        .service-card h3 { font-family: 'Teko', sans-serif; font-size: 2rem; margin-bottom: 10px; }
         
         /* --- DEPOIMENTOS --- */
         .testimonial-card {
-            background-color: var(--background-card);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            max-width: 700px;
-            margin: 0 auto;
+            background-color: var(--background-card); padding: 30px;
+            border-radius: 8px; border: 1px solid var(--border-color);
+            max-width: 700px; margin: 0 auto;
         }
         .testimonial-card p.quote { font-style: italic; font-size: 1.1rem; margin-bottom: 20px; }
         .testimonial-card p.author { font-weight: 700; color: var(--accent-blue); }
         
         /* --- FOOTER --- */
-        .main-footer {
-            padding: 60px 0;
-            background-color: var(--background-card);
-        }
+        .main-footer { padding: 60px 0; background-color: var(--background-card); }
         
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 25px; }
 
         .social-links a { margin: 0 15px; }
 
         .social-links svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--secondary-text);
+            width: 28px; height: 28px; fill: var(--secondary-text);
             transition: fill 0.3s ease, transform 0.3s ease;
         }
 
-        .social-links a:hover svg {
-            fill: var(--accent-blue);
-            transform: scale(1.2);
-        }
+        .social-links a:hover svg { fill: var(--accent-blue); transform: scale(1.2); }
 
         .footer-text { color: var(--secondary-text); font-size: 0.9rem; }
         
-        /* --- MEDIA QUERIES --- */
+        /* --- MEDIA QUERIES E RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .gallery-layout {
+                flex-direction: column; /* Empilha as colunas */
+                text-align: center;
+            }
+            .video-showcase {
+                margin-bottom: 40px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .header-content { flex-direction: column; gap: 15px; }
+            .nav-link-desktop {
+                display: none; /* Oculta os links de navegação no celular */
+            }
+            .main-nav a {
+                margin-left: 0; /* Remove margem do botão que sobra */
+            }
             .hero h1 { font-size: 3.5rem; }
             .section-title { font-size: 2.8rem; }
         }
@@ -277,8 +287,8 @@
                     <img src="/logo.jpg" alt="Logo Bruno DJ" class="logo">
                 </a>
                 <nav class="main-nav">
-                    <a href="#servicos">Serviços</a>
-                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#servicos" class="nav-link-desktop">Serviços</a>
+                    <a href="#gallery" class="nav-link-desktop">Galeria</a>
                     <a href="#contato" class="cta-button-small">Contato</a>
                 </nav>
             </div>
@@ -297,13 +307,21 @@
         <section id="gallery">
             <div class="container">
                 <h2 class="section-title">A ENERGIA EM AÇÃO</h2>
-                <p class="section-subtitle">Aperte o play e sinta a atmosfera que levo para a sua festa. A prova de que a música certa faz toda a diferença.</p>
+                <p class="section-subtitle">A prova de que a música certa faz toda a diferença.</p>
                 
-                <div class="video-showcase">
-                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><div style="padding:16px;"></div></blockquote>
-                    <script async src="//www.instagram.com/embed.js"></script>
+                <div class="gallery-layout">
+                    <div class="video-column">
+                        <div class="video-showcase">
+                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><div style="padding:16px;"></div></blockquote>
+                            <script async src="//www.instagram.com/embed.js"></script>
+                        </div>
+                    </div>
+                    <div class="text-column">
+                        <h3>CONECTE-SE COM A VIBE</h3>
+                        <p>Acompanhe minhas últimas performances, bastidores e novidades diretamente no meu perfil do Instagram. Faça parte da comunidade e sinta a energia de cada evento.</p>
+                        <a href="https://instagram.com/brunoa.dj" target="_blank" class="cta-button-large" style="font-size: 1.5rem; padding: 12px 35px;">SEGUIR NO INSTAGRAM</a>
+                    </div>
                 </div>
-
             </div>
         </section>
 
@@ -328,7 +346,7 @@
                     </div>
                     <div class="service-card">
                         <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                            <svg xmlns="http://www.w.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
                         </div>
                         <h3>Festas Privadas</h3>
                         <p>Seja qual for o motivo da celebração, levo os melhores hits e uma energia contagiante para sua festa.</p>
@@ -371,7 +389,7 @@
                 </div>
                 <div class="footer-text">
                     <p>&copy; 2025 Bruno DJ - Todos os direitos reservados.</p>
-                    <p>Atendendo em Juazeiro do Norte e todo o Ceará.</p>
+                    <p>Atendendo em todo o Ceará.</p>
                 </div>
             </div>
         </div>
