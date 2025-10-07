@@ -3,184 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno DJ - Professional DJ for Events in Ceará</title>
-    <meta name="description" content="Elevate your wedding, party, or corporate event with Bruno DJ. Professional sound and lighting throughout Ceará. Request a quote.">
+    <title>Bruno DJ - Arte e Sofisticação para seu Evento no Ceará</title>
+    <meta name="description" content="Eleve seu evento a outro patamar com Bruno DJ. Experiências sonoras únicas para casamentos, festas e eventos corporativos em todo o Ceará.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Teko:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Profissional e Alinhado */
         :root {
-            --background-dark: #121212;
-            --background-card: #1E1E1E;
-            --primary-text: #EAEAEA;
-            --secondary-text: #A0A0A0;
-            --accent-blue: #007BFF; /* Cor de destaque profissional */
-            --border-color: #2f2f2f;
+            --background-dark: #0A0A0A;
+            --background-card: #141414;
+            --primary-text: #F5F5F5;
+            --secondary-text: #A9A9A9;
+            --accent-gold: #D4AF37; /* Um toque de dourado para sofisticação */
+            --border-color: #282828;
+            --shadow-color: rgba(212, 175, 55, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--background-dark);
             color: var(--primary-text);
-            line-height: 1.7;
+            line-height: 1.8;
             text-align: center;
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to { opacity: 1; }
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        /* --- Header & Navigation --- */
+        
+        /* --- HEADER ROBUSTO --- */
         .main-header {
-            padding: 20px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
-            background-color: rgba(18, 18, 18, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 100;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .main-header .container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            max-width: 180px; /* Ajuste o tamanho da sua logo */
-            height: auto;
+        .logo-container {
+            flex-shrink: 0; /* Impede que a logo encolha */
         }
         
-        .nav-button {
-            display: inline-block;
-            background-color: var(--accent-blue);
+        .logo {
+            max-width: 180px; /* Largura máxima */
+            height: 50px;     /* Altura fixa para alinhar */
+            object-fit: contain; /* Garante que a logo caiba sem distorcer */
+            display: block;
+        }
+        
+        .main-nav a {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
             color: var(--primary-text);
-            padding: 10px 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
             text-decoration: none;
+            margin-left: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover { color: var(--accent-gold); }
+
+        .cta-button-small {
+            background: var(--accent-gold);
+            color: var(--background-dark);
+            padding: 8px 25px;
             border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .nav-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding: 100px 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            transition: background-color 0.3s;
         }
+        .cta-button-small:hover { background-color: #fff; }
 
-        .hero h1 span {
-            color: var(--accent-blue);
+        /* --- HERO SECTION COM FUNDO --- */
+        .hero {
+            position: relative;
+            padding: 120px 0;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 1)), url('https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .hero h1 {
+            font-family: 'Teko', sans-serif;
+            font-size: 5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--secondary-text);
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto 40px auto;
         }
         
-        /* --- Video Section --- */
-        .video-wrapper {
-            max-width: 550px; /* Largura máxima do vídeo */
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .cta-button-large {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--background-dark);
+            padding: 15px 40px;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        .cta-button-large:hover { 
+            background-color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
         }
 
-        .instagram-media {
-            margin: 0 !important; /* Reseta margens do embed */
-        }
-
-        /* --- Sections --- */
+        /* --- SEÇÕES GENÉRICAS --- */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
         }
-
+        
         .section-title {
-            font-size: 2.5rem;
+            font-family: 'Teko', sans-serif;
+            font-size: 3.5rem;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--secondary-text);
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
-        
-        /* --- About Section --- */
-        #sobre p {
-             max-width: 700px;
-             margin: 0 auto;
-             text-align: center;
-             font-size: 1.1rem;
-        }
 
-        /* --- Services Section --- */
+        /* --- SERVIÇOS COM ÍCONES --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
             text-align: left;
         }
 
         .service-card {
             background-color: var(--background-card);
-            padding: 30px;
-            border-radius: 10px;
+            padding: 35px;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-
+        
         .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-blue);
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+        }
+        
+        .service-card .icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
         }
         
         .service-card h3 {
-            font-size: 1.3rem;
+            font-family: 'Teko', sans-serif;
+            font-size: 2rem;
             margin-bottom: 10px;
             color: var(--primary-text);
         }
@@ -190,37 +203,65 @@
             color: var(--secondary-text);
         }
         
-        /* --- CTA Section --- */
-        #contato .container {
+        /* --- SEÇÃO DE DEPOIMENTOS --- */
+        .testimonial-card {
             background-color: var(--background-card);
-            padding: 60px 40px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .testimonial-card p.quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .testimonial-card p.author {
+            font-weight: 700;
+            color: var(--accent-gold);
         }
         
-        /* --- Footer --- */
+        /* --- RODAPÉ ELABORADO --- */
         .main-footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
+            padding: 60px 0;
+            background-color: var(--background-card);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary-text);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover svg {
+            color: var(--accent-gold);
+            transform: scale(1.2);
+        }
+
+        .footer-text {
             color: var(--secondary-text);
             font-size: 0.9rem;
         }
-
-        /* --- Responsiveness --- */
+        
+        /* --- MEDIA QUERIES --- */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .main-header .container {
-                flex-direction: column;
-                gap: 20px;
-            }
+            .header-content { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -228,59 +269,79 @@
 
     <header class="main-header">
         <div class="container">
-            <img src="/logo.jpg" alt="Logo Bruno DJ" class="logo">
-            <a href="#contato" class="nav-button">Solicitar Orçamento</a>
+            <div class="header-content">
+                <a href="#" class="logo-container">
+                    <img src="https://via.placeholder.com/180x50/0A0A0A/D4AF37?text=BRUNO+DJ" alt="Logo Bruno DJ" class="logo">
+                </a>
+                <nav class="main-nav">
+                    <a href="#servicos">Serviços</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                    <a href="#contato" class="cta-button-small">Contato</a>
+                </nav>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero container">
-            <h1>A Trilha Sonora Perfeita para seu <span>Evento Inesquecível</span></h1>
-            <p>Especialista em criar a atmosfera ideal para casamentos, festas e eventos corporativos. Atendimento profissional em todo o Ceará.</p>
-            <a href="#contato" class="nav-button">Fale Comigo</a>
+        <section class="hero">
+            <div class="container">
+                <h1>ARTE E SOFISTICAÇÃO<br>PARA SEU EVENTO</h1>
+                <p>A experiência sonora que transforma celebrações em momentos inesquecíveis. Atendimento premium em todo o Ceará.</p>
+                <a href="#contato" class="cta-button-large">SOLICITE UM ORÇAMENTO</a>
+            </div>
         </section>
         
-        <section id="video" class="container">
-             <div class="video-wrapper">
-                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Uma publicação compartilhada por Bruno Alves (@brunoa.dj)</a></p></div></blockquote>
-                <script async src="//www.instagram.com/embed.js"></script>
+        <section id="video">
+            <div class="container">
+                <h2 class="section-title">A ENERGIA EM AÇÃO</h2>
+                <p class="section-subtitle">Aperte o play e sinta a atmosfera que levo para a sua festa. A prova de que a música certa faz toda a diferença.</p>
+                 <div class="video-wrapper" style="max-width: 550px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcsapSvKfJ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"><div style="padding:16px;"></div></blockquote>
+                    <script async src="//www.instagram.com/embed.js"></script>
+                </div>
             </div>
         </section>
 
-        <section id="sobre">
-            <div class="container">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">Paixão pela música e compromisso com a sua celebração.</p>
-                <p>Com anos de experiência no cenário de eventos do Ceará, meu objetivo é simples: transformar seu momento especial em uma memória inesquecível. Através de uma seleção musical cuidadosa e equipamentos de ponta, garanto uma pista de dança vibrante e uma atmosfera que combina perfeitamente com o seu estilo.</p>
-            </div>
-        </section>
-        
         <section id="servicos">
             <div class="container">
-                <h2 class="section-title">Serviços</h2>
-                <p class="section-subtitle">Soluções completas de som e iluminação para todos os tipos de evento.</p>
+                <h2 class="section-title">SERVIÇOS EXCLUSIVOS</h2>
+                <p class="section-subtitle">Soluções completas e personalizadas para garantir que seu evento seja exatamente como você sonhou.</p>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3>Eventos Sociais</h3>
-                        <p>A trilha sonora perfeita para casamentos, aniversários e formaturas, criando momentos de emoção e alegria.</p>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        <h3>Casamentos</h3>
+                        <p>Da cerimônia à recepção, crio a trilha sonora emocionante e vibrante que o seu grande dia merece.</p>
                     </div>
                     <div class="service-card">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
                         <h3>Eventos Corporativos</h3>
-                        <p>Sofisticação e a energia certa para lançamentos, confraternizações e workshops, fortalecendo a imagem da sua marca.</p>
+                        <p>Profissionalismo e a sonoridade ideal para lançamentos, confraternizações e workshops que impressionam.</p>
                     </div>
                     <div class="service-card">
-                        <h3>Festas e Baladas</h3>
-                        <p>Repertório sempre atualizado com os maiores hits para garantir que a pista de dança nunca pare.</p>
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l9.75 9.75M17.25 8.25L7.5 18M12 18.75l.383.026a1.503 1.503 0 001.737-1.022L16.5 7.5l-3.75-3.75L4.5 14.25l.026.383a1.503 1.503 0 001.022 1.737L12 18.75z" /></svg>
+                        <h3>Festas Privadas</h3>
+                        <p>Seja qual for o motivo da celebração, levo os melhores hits e uma energia contagiante para sua festa.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contato">
+        <section id="depoimentos">
             <div class="container">
-                <h2 class="section-title">Vamos conversar?</h2>
-                <p class="section-subtitle">Estou pronto para entender suas ideias e montar um orçamento personalizado. Clique no botão abaixo para falar diretamente comigo pelo WhatsApp.</p>
-                <a href="https://wa.me/558897273151?text=Olá!%20Vi%20sua%20página%20e%20gostaria%20de%20fazer%20um%20orçamento." class="nav-button" style="font-size: 1.1rem; padding: 15px 40px;" target="_blank">Solicitar Orçamento via WhatsApp</a>
+                <h2 class="section-title">CLIENTES SATISFEITOS</h2>
+                <p class="section-subtitle">A confiança de quem já celebrou comigo é minha maior conquista.</p>
+                <div class="testimonial-card">
+                    <p class="quote">"O Bruno foi incrível! Entendeu perfeitamente o que queríamos para o nosso casamento e manteve a pista cheia a noite toda. Profissionalismo e talento puro. Recomendo demais!"</p>
+                    <p class="author">&mdash; Maria & João, Casamento em Juazeiro do Norte</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contato" class="hero" style="min-height: auto; padding: 100px 0;">
+             <div class="container">
+                <h2 class="section-title" style="font-size: 3.5rem;">VAMOS FAZER SEU EVENTO<br>ACONTECER?</h2>
+                <p class="section-subtitle" style="margin-bottom: 40px;">Me conte sua ideia. Estou pronto para criar uma proposta personalizada e transformar sua festa em uma experiência única.</p>
+                <a href="https://wa.me/558897273151?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20fazer%20um%20orçamento." class="cta-button-large">CHAMAR NO WHATSAPP</a>
             </div>
         </section>
 
@@ -288,8 +349,20 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Bruno DJ - Todos os direitos reservados.</p>
-            <p>Atendendo em todo o Ceará.</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://instagram.com/brunoa.dj" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.552 0-3.886.012-5.242.076-2.813.128-4.015 1.323-4.143 4.143-.064 1.356-.076 1.69-.076 5.242s.012 3.886.076 5.242c.128 2.813 1.33 4.015 4.143 4.143 1.356.064 1.69.076 5.242.076 3.552 0 3.886-.012 5.242-.076 2.813-.128 4.015-1.323 4.143-4.143.064-1.356.076-1.69.076-5.242s-.012-3.886-.076-5.242c-.128-2.813-1.33-4.015-4.143-4.143-1.356-.064-1.69-.076-5.242-.076zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zm0 1.802a1.948 1.948 0 110 3.896 1.948 1.948 0 010-3.896zM18.802 6.198a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"></path></svg>
+                    </a>
+                    <a href="https://wa.me/558897273151" target="_blank" title="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.75 13.96c.25.13.41.2.46.3.08.13.04.61-.09 1.18s-.61 1.08-1.02 1.25c-.41.17-1.31.25-2.07-.04-.94-.36-2.2-1.18-2.9-1.93s-1.25-1.91-1.38-2.33c-.13-.41.04-.66.29-.91.2-.2.41-.29.57-.46.17-.17.25-.29.41-.5.17-.2.08-.41-.04-.57s-.57-1.38-.78-1.93c-.2-.54-.45-.45-.61-.45-.17 0-.38 0-.54.04-.17.04-.38.08-.57.29s-.66.61-.82.98-.17.78-.17 1.25.29 1.54.41 1.7.57.29 1.25.98 1.54 1.38 2.45 1.93c1.18.74 1.95.86 2.53.82.57-.04 1.54-.62 1.74-1.25.2-.62.2-1.12.13-1.25s-.17-.13-.38-.25zm4.34-9.62a8.88 8.88 0 00-12.56 0 8.88 8.88 0 000 12.56l-1.42 5.12 5.25-1.38a8.88 8.88 0 0012.56 0 8.88 8.88 0 000-12.56zM12 21.75c-1.74 0-3.43-.53-4.88-1.54l-5.12 1.38L3.38 16.5c-1-1.45-1.54-3.14-1.54-4.88a9.88 9.88 0 0110.16-9.88 9.88 9.88 0 019.88 9.88c0 5.46-4.42 9.88-9.88 9.88z"></path></svg>
+                    </a>
+                    </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Bruno DJ - Todos os direitos reservados.</p>
+                    <p>Atendendo em todo o Ceará.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
