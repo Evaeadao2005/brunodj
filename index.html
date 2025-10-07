@@ -42,7 +42,7 @@
             padding: 0 20px;
         }
         
-        /* --- HEADER COM CORREÇÃO PARA CELULAR --- */
+        /* --- HEADER --- */
         .main-header {
             padding: 15px 0;
             position: sticky;
@@ -87,14 +87,10 @@
             border-radius: 50px;
             font-weight: 700;
             transition: background-color 0.3s, color 0.3s;
-            white-space: nowrap; /* Impede que o texto quebre */
+            white-space: nowrap;
         }
         .cta-button-small:hover { background-color: #fff; color: var(--background-dark); }
         
-        .nav-link-desktop {
-            /* Estes links serão ocultados em telas menores */
-        }
-
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
@@ -163,19 +159,19 @@
             margin-right: auto;
         }
 
-        /* --- LAYOUT 2 COLUNAS PARA GALERIA (CORRIGIDO) --- */
+        /* --- GALERIA --- */
         #gallery { background-color: var(--background-card); }
 
         .gallery-layout {
             display: flex;
             align-items: center;
-            gap: 50px; /* Espaço entre as colunas */
+            gap: 50px;
             text-align: left;
         }
 
         .gallery-layout .video-column,
         .gallery-layout .text-column {
-            flex: 1; /* Faz com que cada coluna ocupe metade do espaço */
+            flex: 1;
         }
         
         .text-column h3 {
@@ -183,7 +179,6 @@
             font-size: 2.5rem;
             line-height: 1.2;
             margin-bottom: 15px;
-            color: var(--primary-text);
         }
 
         .text-column p {
@@ -192,8 +187,8 @@
         }
 
         .video-showcase {
-            width: 100%; /* Ocupa todo o espaço da coluna */
-            max-width: 500px; /* Limita para não ficar gigante */
+            width: 100%;
+            max-width: 500px;
             margin: 0 auto;
             border-radius: 12px;
             overflow: hidden;
@@ -240,7 +235,7 @@
         .testimonial-card p.author { font-weight: 700; color: var(--accent-blue); }
         
         /* --- FOOTER --- */
-        .main-footer { padding: 60px 0; background-color: var(--background-card); }
+        .main-footer { padding: 60px 0; background-color: var(--background-card); border-bottom: none; }
         
         .footer-content { display: flex; flex-direction: column; align-items: center; gap: 25px; }
 
@@ -255,10 +250,10 @@
 
         .footer-text { color: var(--secondary-text); font-size: 0.9rem; }
         
-        /* --- MEDIA QUERIES E RESPONSIVIDADE --- */
+        /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
         @media (max-width: 992px) {
             .gallery-layout {
-                flex-direction: column; /* Empilha as colunas */
+                flex-direction: column;
                 text-align: center;
             }
             .video-showcase {
@@ -267,14 +262,25 @@
         }
 
         @media (max-width: 768px) {
+            /* OCULTA LINKS DE NAVEGAÇÃO NO CELULAR */
             .nav-link-desktop {
-                display: none; /* Oculta os links de navegação no celular */
+                display: none;
             }
             .main-nav a {
-                margin-left: 0; /* Remove margem do botão que sobra */
+                margin-left: 0;
             }
-            .hero h1 { font-size: 3.5rem; }
+            .logo {
+                max-width: 150px; /* Diminui a logo no celular */
+            }
+            .cta-button-small {
+                padding: 6px 20px; /* Diminui o botão no celular */
+                font-size: 1.3rem;
+            }
+            
+            /* AJUSTA TAMANHO DAS FONTES DOS TÍTULOS */
+            .hero h1 { font-size: 3.2rem; }
             .section-title { font-size: 2.8rem; }
+            .text-column h3 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -346,7 +352,7 @@
                     </div>
                     <div class="service-card">
                         <div class="icon-wrapper">
-                            <svg xmlns="http://www.w.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
                         </div>
                         <h3>Festas Privadas</h3>
                         <p>Seja qual for o motivo da celebração, levo os melhores hits e uma energia contagiante para sua festa.</p>
@@ -361,7 +367,7 @@
                 <p class="section-subtitle">A confiança de quem já celebrou comigo é minha maior conquista.</p>
                 <div class="testimonial-card">
                     <p class="quote">"O Bruno foi incrível! Entendeu perfeitamente o que queríamos para o nosso casamento e manteve a pista cheia a noite toda. Profissionalismo e talento puro. Recomendo demais!"</p>
-                    <p class="author">&mdash; Maria & João, Casamento em Juazeiro do Norte</p>
+                    <p class="author">&mdash; Maria & João, Casamento no Ceará</p>
                 </div>
             </div>
         </section>
